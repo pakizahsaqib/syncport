@@ -13,11 +13,13 @@ import {
   GitBranch,
 } from "lucide-react";
 import { SyncportLogo } from "@/components/brand/syncport-logo";
-import { AdapterLogo } from "@/components/playground/adapter-logos";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ADAPTER_BRANDS } from "@/lib/adapter-brands";
-import { ADAPTERS, type AdapterId } from "@/lib/presets";
+import { LandingCodeSnippet } from "@/components/landing/landing-code-snippet";
+import { SupportedAdaptersSection } from "@/components/landing/supported-adapters-section";
+import { SectionHeader } from "@/components/landing/section-header";
+import { landingType } from "@/components/landing/typography";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GITHUB_REPO, NPM_ORG } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 const FEATURES = [
   {
@@ -52,7 +54,10 @@ export default function LandingPage() {
           </Link>
           <Link
             href="/playground"
-            className="inline-flex h-8 items-center rounded bg-[var(--ide-accent)] px-3 text-sm font-medium text-white hover:bg-[var(--ide-accent-hover)]"
+            className={cn(
+              "inline-flex h-9 items-center rounded bg-[var(--ide-accent)] px-4 text-white hover:bg-[var(--ide-accent-hover)]",
+              landingType.button,
+            )}
           >
             Open Playground
           </Link>
@@ -67,20 +72,28 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <span className="inline-flex items-center gap-2 rounded border border-ide-border bg-white px-3 py-1 text-xs text-ide-muted mb-6 shadow-sm">
+            <span
+              className={cn(
+                "mb-6 inline-flex items-center gap-2 rounded border border-ide-border bg-white px-3 py-1.5 shadow-sm",
+                landingType.eyebrow,
+              )}
+            >
               Open source · TypeScript monorepo
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-ide-fg">
+            <h1 className={landingType.display}>
               Transform Any JSON Into CRM-Ready Data
             </h1>
-            <p className="mt-5 text-lg text-ide-muted max-w-2xl mx-auto">
+            <p className={cn("mx-auto mt-6 max-w-2xl", landingType.lead)}>
               Syncport Playground lets developers instantly transform, validate, and export structured
               CRM payloads in a familiar IDE-style interface.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/playground"
-                className="inline-flex h-10 items-center gap-2 rounded bg-[var(--ide-accent)] px-6 text-sm font-medium text-white hover:bg-[var(--ide-accent-hover)] shadow-sm"
+                className={cn(
+                  "inline-flex h-11 items-center gap-2 rounded bg-[var(--ide-accent)] px-6 text-white shadow-sm hover:bg-[var(--ide-accent-hover)]",
+                  landingType.button,
+                )}
               >
                 Open Playground
                 <ArrowRight className="h-4 w-4" />
@@ -89,7 +102,10 @@ export default function LandingPage() {
                 href={GITHUB_REPO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-md border border-[var(--github-border)] bg-[var(--github-bg)] px-6 text-sm font-medium text-[var(--github-fg)] shadow-sm transition-colors hover:bg-[var(--github-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--github-bg)] focus-visible:ring-offset-2"
+                className={cn(
+                  "inline-flex h-11 items-center gap-2 rounded-md border border-[var(--github-border)] bg-[var(--github-bg)] px-6 text-[var(--github-fg)] shadow-sm transition-colors hover:bg-[var(--github-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--github-bg)] focus-visible:ring-offset-2",
+                  landingType.button,
+                )}
               >
                 <Github className="h-4 w-4" aria-hidden />
                 GitHub
@@ -98,7 +114,10 @@ export default function LandingPage() {
                 href={NPM_ORG}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-md border border-[var(--npm-border)] bg-[var(--npm-bg)] px-6 text-sm font-medium text-[var(--npm-fg)] shadow-sm transition-colors hover:bg-[var(--npm-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--npm-bg)] focus-visible:ring-offset-2"
+                className={cn(
+                  "inline-flex h-11 items-center gap-2 rounded-md border border-[var(--npm-border)] bg-[var(--npm-bg)] px-6 text-[var(--npm-fg)] shadow-sm transition-colors hover:bg-[var(--npm-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--npm-bg)] focus-visible:ring-offset-2",
+                  landingType.button,
+                )}
               >
                 <Package className="h-4 w-4" aria-hidden />
                 npm
@@ -110,14 +129,14 @@ export default function LandingPage() {
 
       <section className="px-6 py-16 border-t border-ide-border bg-white">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-xl font-semibold text-center mb-10 text-ide-fg">Features</h2>
+          <SectionHeader title="Features" className="mb-12" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {FEATURES.map((f) => (
               <Card key={f.title} className="hover:shadow-md transition-shadow">
                 <CardHeader>
                   <f.icon className="h-7 w-7 text-[var(--ide-accent)] mb-2" />
-                  <CardTitle className="text-base">{f.title}</CardTitle>
-                  <CardDescription>{f.description}</CardDescription>
+                  <CardTitle className={landingType.cardTitle}>{f.title}</CardTitle>
+                  <CardDescription className={landingType.body}>{f.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -125,41 +144,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 border-t border-ide-border">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-xl font-semibold text-center mb-3 text-ide-fg">Supported Adapters</h2>
-          <p className="text-center text-ide-muted mb-10 text-sm">
-            Official CRM & export targets with brand-accurate styling
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {ADAPTERS.map((a) => {
-              const brand = ADAPTER_BRANDS[a.id];
-              return (
-                <div
-                  key={a.id}
-                  className="flex items-start gap-3 rounded border border-ide-border bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
-                  style={{ borderLeftWidth: 4, borderLeftColor: brand.primary }}
-                >
-                  <AdapterLogo id={a.id as AdapterId} size={40} />
-                  <div>
-                    <h3 className="font-semibold text-sm" style={{ color: brand.primary }}>
-                      {a.name}
-                    </h3>
-                    <p className="text-xs text-ide-muted mt-1">{a.description}</p>
-                    <p className="text-[10px] text-ide-muted mt-2 font-mono">{a.outputType}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <SupportedAdaptersSection />
 
       <section className="px-6 py-16 border-t border-ide-border">
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-xl font-semibold mb-4 text-ide-fg">Developer Experience</h2>
-            <ul className="space-y-3 text-sm text-ide-muted">
+            <h2 className={cn("mb-6", landingType.sectionTitle)}>Developer Experience</h2>
+            <ul className={cn("space-y-4", landingType.body)}>
               <li className="flex gap-2">
                 <GitBranch className="h-4 w-4 text-[var(--ide-accent)] shrink-0 mt-0.5" />
                 Fluent pipeline API: map → validate → sanitize → transform → export
@@ -175,24 +166,17 @@ export default function LandingPage() {
             </ul>
           </div>
           <Card className="overflow-hidden">
-            <div className="border-b border-ide-border bg-ide-tab-bar px-3 py-1.5 text-[11px] text-ide-muted">
+            <div className={cn("border-b border-ide-border bg-ide-tab-bar px-3 py-2", landingType.eyebrow)}>
               example.ts
             </div>
-            <CardContent className="p-4 font-mono text-xs text-ide-fg leading-relaxed bg-ide-editor">
-              {`import { transform } from "@syncport/core";
-import { HubspotAdapter } from "@syncport/hubspot";
-
-const result = transform({ name: "Ali", email: "ali@test.com" })
-  .map({ fields: { name: "name", email: "email" } })
-  .sanitize()
-  .use(new HubspotAdapter())
-  .export();`}
-            </CardContent>
+            <div className="overflow-hidden bg-[#fffffe]">
+              <LandingCodeSnippet />
+            </div>
           </Card>
         </div>
       </section>
 
-      <footer className="border-t border-ide-border py-6 text-center text-xs text-ide-muted bg-white">
+      <footer className={cn("border-t border-ide-border bg-white py-8 text-center", landingType.caption)}>
         © {new Date().getFullYear()} Syncport — MIT License
       </footer>
     </div>
