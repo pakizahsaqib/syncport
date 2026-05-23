@@ -1,0 +1,22 @@
+{
+  "name": "@syncport/example-basic",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@syncport/core": "workspace:*",
+    "@syncport/csv": "workspace:*",
+    "@syncport/hubspot": "workspace:*",
+    "@syncport/sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
