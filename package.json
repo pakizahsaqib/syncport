@@ -18,6 +18,11 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md}\"",
     "typecheck": "turbo run typecheck"
   },
+  "pnpm": {
+    "overrides": {
+      "postcss": "^8.4.49"
+    }
+  },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/node": "^22.10.2",

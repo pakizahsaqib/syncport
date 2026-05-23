@@ -25,7 +25,7 @@ pnpm test
 Publish dependencies first:
 
 1. `@syncport/core`
-2. `@syncport/hubspot`, `@syncport/airtable`, `@syncport/csv`
+2. `@syncport/hubspot`, `@syncport/airtable`, `@syncport/csv`, `@syncport/sheets`, `@syncport/xlsx`
 3. `@syncport/sdk`
 
 From each package directory:
@@ -42,6 +42,8 @@ pnpm --filter @syncport/core publish --access public
 pnpm --filter @syncport/hubspot publish --access public
 pnpm --filter @syncport/airtable publish --access public
 pnpm --filter @syncport/csv publish --access public
+pnpm --filter @syncport/sheets publish --access public
+pnpm --filter @syncport/xlsx publish --access public
 pnpm --filter @syncport/sdk publish --access public
 ```
 

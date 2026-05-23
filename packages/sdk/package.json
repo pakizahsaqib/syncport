@@ -44,11 +44,15 @@
   "peerDependencies": {
     "@syncport/airtable": "workspace:*",
     "@syncport/csv": "workspace:*",
-    "@syncport/hubspot": "workspace:*"
+    "@syncport/hubspot": "workspace:*",
+    "@syncport/sheets": "workspace:*",
+    "@syncport/xlsx": "workspace:*"
   },
   "peerDependenciesMeta": {
     "@syncport/airtable": { "optional": true },
     "@syncport/csv": { "optional": true },
-    "@syncport/hubspot": { "optional": true }
+    "@syncport/hubspot": { "optional": true },
+    "@syncport/sheets": { "optional": true },
+    "@syncport/xlsx": { "optional": true }
   }
 }

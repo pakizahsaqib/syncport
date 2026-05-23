@@ -2,6 +2,8 @@
 
 **Developer-first data transformation and export engine** — convert generic JSON into CRM-compatible payloads (HubSpot, Airtable, CSV, and more).
 
+**Repository:** [github.com/pakizahsaqib/syncport](https://github.com/pakizahsaqib/syncport)
+
 [![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)]()
 
@@ -88,10 +90,23 @@ syncport/
 │   ├── hubspot/    @syncport/hubspot
 │   ├── airtable/   @syncport/airtable
 │   ├── csv/        @syncport/csv
+│   ├── sheets/     @syncport/sheets
+│   ├── xlsx/       @syncport/xlsx
 │   └── sdk/        @syncport/sdk
+├── apps/playground/  Syncport Playground (Next.js)
 ├── examples/basic/
 └── docs/
 ```
+
+## Playground
+
+```bash
+pnpm install
+pnpm build
+pnpm --filter @syncport/playground dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) for the landing page and `/playground` for the interactive transformer UI.
 
 ## Development
 
