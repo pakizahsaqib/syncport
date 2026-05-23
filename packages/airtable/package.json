@@ -1,7 +1,26 @@
 {
   "name": "@syncport/airtable",
-  "version": "0.1.0",
-  "description": "Airtable adapter for Syncport",
+  "version": "0.1.1",
+  "description": "Airtable adapter for Syncport — transform JSON into Airtable record fields",
+  "keywords": [
+    "syncport",
+    "airtable",
+    "records",
+    "json",
+    "transform",
+    "adapter",
+    "export",
+    "typescript",
+    "data-transform",
+    "no-code"
+  ],
+  "homepage": "https://syncport.vercel.app/playground",
+  "bugs": "https://github.com/pakizahsaqib/syncport/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakizahsaqib/syncport.git",
+    "directory": "packages/airtable"
+  },
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -20,7 +39,7 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "publishConfig": {
     "access": "public"
   },

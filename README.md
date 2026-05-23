@@ -106,7 +106,9 @@ pnpm build
 pnpm --filter @syncport/playground dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) for the landing page and `/playground` for the interactive transformer UI.
+Live: [syncport.vercel.app/playground](https://syncport.vercel.app/playground)
+
+Local: `pnpm --filter @syncport/playground dev` then [http://localhost:3000](http://localhost:3000)
 
 ## Development
 

@@ -1,7 +1,26 @@
 {
   "name": "@syncport/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "High-level Syncport client for data export and adapter registration",
+  "keywords": [
+    "syncport",
+    "sdk",
+    "client",
+    "export",
+    "json",
+    "transform",
+    "adapter",
+    "crm",
+    "typescript",
+    "data-transform"
+  ],
+  "homepage": "https://syncport.vercel.app/playground",
+  "bugs": "https://github.com/pakizahsaqib/syncport/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakizahsaqib/syncport.git",
+    "directory": "packages/sdk"
+  },
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -20,7 +39,7 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "publishConfig": {
     "access": "public"
   },

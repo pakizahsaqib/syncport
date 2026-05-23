@@ -1,7 +1,26 @@
 {
   "name": "@syncport/sheets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Google Sheets row adapter for Syncport — browser-compatible JSON to sheet rows",
+  "keywords": [
+    "syncport",
+    "google-sheets",
+    "sheets",
+    "spreadsheet",
+    "rows",
+    "json",
+    "transform",
+    "adapter",
+    "typescript",
+    "data-transform"
+  ],
+  "homepage": "https://syncport.vercel.app/playground",
+  "bugs": "https://github.com/pakizahsaqib/syncport/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakizahsaqib/syncport.git",
+    "directory": "packages/sheets"
+  },
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -20,7 +39,7 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "publishConfig": {
     "access": "public"
   },

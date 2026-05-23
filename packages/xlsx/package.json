@@ -1,7 +1,26 @@
 {
   "name": "@syncport/xlsx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "XLSX workbook export adapter for Syncport using SheetJS",
+  "keywords": [
+    "syncport",
+    "xlsx",
+    "excel",
+    "workbook",
+    "sheetjs",
+    "json",
+    "transform",
+    "adapter",
+    "export",
+    "typescript"
+  ],
+  "homepage": "https://syncport.vercel.app/playground",
+  "bugs": "https://github.com/pakizahsaqib/syncport/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakizahsaqib/syncport.git",
+    "directory": "packages/xlsx"
+  },
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -20,7 +39,7 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "publishConfig": {
     "access": "public"
   },

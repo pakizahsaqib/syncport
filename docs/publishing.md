@@ -52,11 +52,18 @@ pnpm --filter @syncport/sdk publish --access public
 Each published package includes:
 
 - `name`: `@syncport/<package>`
-- `version`: semver
+- `version`: semver (bump before each publish)
+- `description`: unique one-line summary for npm search
+- `keywords`: shared + package-specific terms for npm discoverability
+- `homepage`: `https://syncport.vercel.app/playground`
+- `repository`: git URL with `directory` pointing at `packages/<name>`
+- `bugs`: GitHub issues URL
 - `publishConfig.access`: `"public"`
 - `exports`: ESM + CJS + types
-- `files`: `["dist"]` only (no source in tarball)
+- `files`: `["dist", "README.md"]` (README appears on the npm package page)
 - `sideEffects`: `false` for tree shaking
+
+Repo changes do not update npm until you publish a new version.
 
 ## CI suggestion
 
