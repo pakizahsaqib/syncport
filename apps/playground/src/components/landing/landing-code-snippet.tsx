@@ -52,8 +52,6 @@ export function LandingCodeSnippet() {
           verticalScrollbarSize: 0,
           handleMouseWheel: false,
         },
-        cursorBlinking: "hidden",
-        cursorStyle: "line-thin",
         contextmenu: false,
         selectionHighlight: false,
         occurrencesHighlight: "off",
